@@ -13,6 +13,9 @@ module.exports = (robot) ->
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
+   robot.hear /@yeng/i, (res) ->
+     res.send "@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng"
+
    robot.hear /problem\??/i, (msg) ->
      msg.send "http://cl.ly/BG7R/trollface.jpg"
 
