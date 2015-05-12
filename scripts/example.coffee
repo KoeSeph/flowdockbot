@@ -16,6 +16,9 @@ module.exports = (robot) ->
    robot.hear /@yeng/i, (res) ->
      res.send "@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng"
 
+   robot.hear /@francisco/i, (res) ->
+     res.send "@francisco is a pretty cool guy!"
+
    robot.hear /problem\??/i, (msg) ->
      msg.send "http://cl.ly/BG7R/trollface.jpg"
 
