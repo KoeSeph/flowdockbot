@@ -1,0 +1,18 @@
+{
+  "name": "420mlgbot",
+  "version": "0.0.0",
+  "private": true,
+
+  "author": "KoeSeph <koesavant@gmail.com>",
+
+  "description": "gg",
+
+  "dependencies": {
+    "hubot-flowdock": ">= 0.0.1",
+    "hubot": ">= 2.0.0"
+  },
+
+  "engines": {
+    "node": "0.8.x"
+  }
+}
