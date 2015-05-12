@@ -12,7 +12,19 @@ module.exports = (robot) ->
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  
+
+   robot.hear /problem\??/i, (msg) ->
+     msg.send "http://cl.ly/BG7R/trollface.jpg"
+
+   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
+     imagery = msg.match[3]
+     msg.http('http://ajax.googleapis.com/ajax/services/search/images')
+      .query(v: "1.0", rsz: '8', q: query)
+      .get() (err, res, body) ->
+       images = JSON.parse(body)
+       images = images.responseData.results
+       msg.send msg.random images
+
    robot.respond /open the (.*) doors/i, (res) ->
      doorType = res.match[1]
      if doorType is "pod bay"
