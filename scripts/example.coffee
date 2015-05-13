@@ -27,6 +27,9 @@ module.exports = (robot) ->
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
+  robot.respond /what is your name?|what's your name?/i, (res) ->
+    res.send "Yes. I have one."
+
   robot.hear /@yeng/i, (res) ->
     res.send "@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng"
 
@@ -46,8 +49,8 @@ module.exports = (robot) ->
   robot.hear /help me please/i, (res) ->
     res.send "ok"
 
-  robot.hear /problem\??/i, (msg) ->
-    msg.send "http://cl.ly/BG7R/trollface.jpg"
+  robot.hear /problem\??/i, (res) ->
+    res.send "http://cl.ly/BG7R/trollface.jpg"
 
   robot.hear /@everyone/i, (res) ->
     res.send "HEY @everyone listen up!!!"
@@ -56,14 +59,14 @@ module.exports = (robot) ->
     niceness = ['it is lovely', 'I love it!', 'AMAZING!', 'WHOAH MAN TOO COOL', '3Legit5Me', 'If I was not a robot, I would marry it', 'that is too amazing', 'Best ever!', 'I think @erica would love it!', 'I am not sure. What do you think @yeng ?', 'maybe @elizabeth will want to see it!', 'holy chicken fingers. @everyone has to see this.']
     res.send res.random niceness
 
-  robot.respond /(image|img)( me)? (.*)/i, (msg) ->
+  robot.respond /(image|img)( me)? (.*)/i, (res) ->
     imagery = msg.match[3]
-    msg.http('http://ajax.googleapis.com/ajax/services/search/images')
+    res.http('http://ajax.googleapis.com/ajax/services/search/images')
       .query(v: "1.0", rsz: '8', q: query)
       .get() (err, res, body) ->
       images = JSON.parse(body)
       images = images.responseData.results
-      msg.send msg.random images
+      res.send res.random images
 
   robot.respond /open the (.*) doors/i, (res) ->
     doorType = res.match[1]
