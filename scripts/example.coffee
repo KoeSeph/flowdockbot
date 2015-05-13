@@ -8,7 +8,20 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 cleverbot = require('cleverbot-node')
+today = new Date()
+dd = today.getDate()
+mm = today.getMonth() + 1 
+yyyy = today.getFullYear()
 
+if( dd < 10 ) {
+  dd = '0' + dd
+} 
+
+if( mm < 10 ) {
+  mm = '0' + mm
+} 
+
+today = mm+'/'+dd+'/'+yyyy
 
 module.exports = (robot) ->
   c = new cleverbot()
@@ -21,9 +34,7 @@ module.exports = (robot) ->
   #  res.send res.random nosad
 
   robot.respond /what day is it?/i, (res) ->
-    now = new Date()
-    onejan = new Date(now.getFullYear() , 0 , 1)
-    msg.send "The current day is: " + Math.ceil((now - onejan) / 86400000); 
+    res.send today 
 
   robot.hear /c (.*)/i, (res) ->
     data = res.match[1].trim()
