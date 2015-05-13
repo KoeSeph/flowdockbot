@@ -26,7 +26,7 @@ module.exports = (robot) ->
   robot.hear /@francisco/i, (res) ->
     res.send "@francisco!!! someone is calling for you! @francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco"
 
-  robot.hear /cityslickers/i, (res) ->
+  robot.hear /cityslickers/i, /city slickers/i,(res) ->
     res.send "How Well Do You Know YOUR city?"
 
   robot.hear /help me/i, (res) ->
