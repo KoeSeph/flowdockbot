@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
   niceness = ['it is lovely', 'I love it!', 'AMAZING!', 'WHOAH MAN TOO COOL', '3Legit5Me', 'If I was not a robot, I would marry it', 'that is too amazing', 'Best ever!']
 
-  robot.respond /what do you think of/i, (res) ->
+  robot.hear /what do you think of/i, (res) ->
     msg.send msg.random niceness
 
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
