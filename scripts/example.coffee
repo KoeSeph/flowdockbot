@@ -68,15 +68,6 @@ module.exports = (robot) ->
       images = images.responseData.results
       res.send res.random images
 
-  robot.respond /(google|gog)( me)? (.*)/i, (res) ->
-    imagery = msg.match[3]
-    res.http('http://ajax.googleapis.com/ajax/services/search')
-      .query(v: "1.0", rsz: '8', q: query)
-      .get() (err, res, body) ->
-      links = JSON.parse(body)
-      links = links.responseData.results
-      res.send res.random links
-
   robot.respond /open the (.*) doors/i, (res) ->
     doorType = res.match[1]
     if doorType is "pod bay"
