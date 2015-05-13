@@ -29,8 +29,8 @@ module.exports = (robot) ->
   robot.hear /cityslickers|city slickers/i,(res) ->
     res.send "How Well Do You Know YOUR city?"
 
-  robot.hear /help me/i, (res) ->
-    res.send "say please!"
+  robot.hear /baggers/i, (res) ->
+    res.send "that's not how you spell it..."
 
   robot.hear /help me please/i, (res) ->
     res.send "ok"
