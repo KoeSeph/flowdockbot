@@ -16,6 +16,10 @@ module.exports = (robot) ->
   robot.hear /!macromania/i, (res) ->
     res.send "working on it ;)"
 
+  robot.hear /(.*) :( (.*)/i, (res) ->
+    nosad = ['Dont be sad! I am here for you :)', 'turn that frown into a crown! you are a ruler in my robot eyes :)', 'my mother told me that sad people are less likely to be happy. So please no sad.', 'Stop being sad kthanxbye.']
+    res.send res.random nosad
+
   robot.hear /c (.*)/i, (msg) ->
     data = msg.match[1].trim()
     c.write(data, (c) => msg.send(c.message))
