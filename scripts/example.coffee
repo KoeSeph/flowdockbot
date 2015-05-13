@@ -19,6 +19,15 @@ module.exports = (robot) ->
    robot.hear /@francisco/i, (res) ->
      res.send "@francisco!!! someone is calling for you! @francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco@francisco"
 
+   robot.hear /cityslickers/i, (res) ->
+     res.send "How Well Do You Know YOUR city?"
+
+   robot.hear /help me/i, (res) ->
+     res.send "say please!"
+
+   robot.hear /help me please/i, (res) ->
+     res.send "ok"
+
    robot.hear /problem\??/i, (msg) ->
      msg.send "http://cl.ly/BG7R/trollface.jpg"
 
