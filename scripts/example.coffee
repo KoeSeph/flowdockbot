@@ -14,9 +14,9 @@ module.exports = (robot) ->
    c = new cleverbot()
 
    robot.respond /c (.*)/i, (msg) ->
-    data = msg.match[1].trim()
-    c.write(data, (c) => msg.send(c.message))
-    
+     data = msg.match[1].trim()
+     c.write(data, (c) => msg.send(c.message))
+
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
