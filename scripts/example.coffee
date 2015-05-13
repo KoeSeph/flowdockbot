@@ -13,11 +13,10 @@ dd = today.getDate()
 mm = today.getMonth() + 1 
 yyyy = today.getFullYear()
 
-dd < 10 ?
+if dd < 10 
   dd = '0' + dd
 
-
-mm < 10?
+if mm < 10
   mm = '0' + mm
 
 
@@ -34,6 +33,18 @@ module.exports = (robot) ->
   #  res.send res.random nosad
 
   robot.respond /what day is it?/i, (res) ->
+    today = new Date()
+    dd = today.getDate()
+    mm = today.getMonth() + 1 
+    yyyy = today.getFullYear()
+
+    dd < 10 ?
+      dd = '0' + dd
+
+    mm < 10?
+      mm = '0' + mm
+
+    today = mm+'/'+dd+'/'+yyyy
     res.send today 
 
   robot.hear /c (.*)/i, (res) ->
