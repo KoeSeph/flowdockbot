@@ -38,9 +38,8 @@ module.exports = (robot) ->
   robot.hear /problem\??/i, (msg) ->
     msg.send "http://cl.ly/BG7R/trollface.jpg"
 
-  niceness = ['it is lovely', 'I love it!', 'AMAZING!', 'WHOAH MAN TOO COOL', '3Legit5Me', 'If I was not a robot, I would marry it', 'that is too amazing', 'Best ever!']
-
   robot.hear /what do you think of/i, (res) ->
+    niceness = ['it is lovely', 'I love it!', 'AMAZING!', 'WHOAH MAN TOO COOL', '3Legit5Me', 'If I was not a robot, I would marry it', 'that is too amazing', 'Best ever!']
     msg.send msg.random niceness
 
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
