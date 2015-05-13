@@ -98,6 +98,10 @@ module.exports = (robot) ->
       res.send "Who you calling 'slow'?"
     , 60 * 1000
 
+  robot.hear /who wants to (.*)/i, (res) ->
+    wantto = ['MEMEMEME pick Me!', 'Not me. Not feelin it.', 'I can try!', 'I think @yeng should do it', 'I think @erica would LOVE to!', '@elizabeth obviously wants to do it...', 'why not @victoria?', 'Maybe @francisco?']
+    res.send res.random wantto
+
   annoyIntervalId = null
 
   robot.respond /annoy me/, (res) ->
