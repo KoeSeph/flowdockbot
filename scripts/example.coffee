@@ -20,6 +20,11 @@ module.exports = (robot) ->
   #  nosad = ['Dont be sad! I am here for you :)', 'turn that frown into a crown! you are a ruler in my robot eyes :)', 'my mother told me that sad people are less likely to be happy. So please no sad.', 'Stop being sad kthanxbye.']
   #  res.send res.random nosad
 
+  robot.respond /what day is it?/i, (res) ->
+    now = new Date()
+    onejan = new Date(now.getFullYear() , 0 , 1)
+    msg.send "The current day is: " + Math.ceil((now - onejan) / 86400000); 
+
   robot.hear /c (.*)/i, (res) ->
     data = res.match[1].trim()
     c.write(data, (c) => res.send(c.message))
