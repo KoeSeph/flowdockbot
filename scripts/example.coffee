@@ -82,7 +82,7 @@ module.exports = (robot) ->
     res.send res.random niceness
 
   robot.respond /do you (.*)\?/i, (res) ->
-    doEye = ['no', 'yes', 'maybe', '@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng']
+    doEye = ['no', 'yes', 'pizza', 'potatoes', 'peanuts','maybe', '@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng']
     res.send res.random doEye
 
   robot.respond /(image|img)( me)? (.*)/i, (res) ->
