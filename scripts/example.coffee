@@ -87,8 +87,8 @@ module.exports = (robot) ->
       .query(v: "1.0", rsz: '8', q: imagery)
       .get() (err, res, body) ->
        images = JSON.parse(body)
-       images = images.responseData.results
-      res.send res.random images
+      images = images.responseData.results
+    res.send res.random images
 
   robot.respond /open the (.*) doors/i, (res) ->
     doorType = res.match[1]
