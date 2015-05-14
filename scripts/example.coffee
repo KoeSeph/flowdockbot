@@ -19,20 +19,20 @@ module.exports = (robot) ->
   #  nosad = ['Dont be sad! I am here for you :)', 'turn that frown into a crown! you are a ruler in my robot eyes :)', 'my mother told me that sad people are less likely to be happy. So please no sad.', 'Stop being sad kthanxbye.']
   #  res.send res.random nosad
 
-  robot.respond /what day is it?/i, (res) ->
-    today = new Date()
-    dd = today.getDate()
-    mm = today.getMonth() + 1 
-    yyyy = today.getFullYear()
+  # robot.respond /what day is it?/i, (res) ->
+  #   today = new Date()
+  #   dd = today.getDate()
+  #   mm = today.getMonth() + 1 
+  #   yyyy = today.getFullYear()
 
-    dd < 10 ?
-      dd = '0' + dd
+  #   dd < 10 ?
+  #     dd = '0' + dd
 
-    mm < 10?
-      mm = '0' + mm
+  #   mm < 10?
+  #     mm = '0' + mm
 
-    today = mm+'/'+dd+'/'+yyyy
-    res.send today 
+  #   today = mm+'/'+dd+'/'+yyyy
+  #   res.send today 
 
   robot.hear /c (.*)/i, (res) ->
     data = res.match[1].trim()
