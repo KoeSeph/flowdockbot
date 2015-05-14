@@ -81,6 +81,10 @@ module.exports = (robot) ->
     niceness = ['it is lovely', 'I love it!', 'AMAZING!', 'WHOAH MAN TOO COOL', '3Legit5Me', 'If I was not a robot, I would marry it', 'that is too amazing', 'Best ever!', 'I think @erica would love it!', 'I am not sure. What do you think @yeng ?', 'maybe @elizabeth will want to see it!', 'holy chicken fingers. @everyone has to see this.']
     res.send res.random niceness
 
+  robot.respond /do you (.*)\?/i, (res) ->
+    doEye = ['no', 'yes', 'maybe', '@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng']
+    res.send res.random doEye
+
   robot.respond /(image|img)( me)? (.*)/i, (res) ->
     imagery = res.match[3]
     images = []
