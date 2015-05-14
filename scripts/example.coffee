@@ -195,7 +195,7 @@ module.exports = (robot) ->
     robot.brain.set 'totalSodas', 0
     res.reply 'zzzzz'
 
-  robot.respond /(.*)/i, (res) ->
-    res.send "I do not know what to say to that"
+  # robot.respond /(.*)/i, (res) ->
+  #   res.send "I do not know what to say to that"
 
 
