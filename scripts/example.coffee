@@ -115,7 +115,6 @@ module.exports = (robot) ->
   robot.topic (res) ->
     res.send "#{res.message.text}? That's a Paddlin'"
 
-
   enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
   leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
 
@@ -195,3 +194,8 @@ module.exports = (robot) ->
   robot.respond /sleep it off/i, (res) ->
     robot.brain.set 'totalSodas', 0
     res.reply 'zzzzz'
+
+  robot.respond /(.*)/i, (res) ->
+    res.send "I do not know what to say to that"
+
+
