@@ -82,7 +82,7 @@ module.exports = (robot) ->
     res.send res.random niceness
 
   robot.respond /(image|img)( me)? (.*)/i, (res) ->
-    imagery = msg.match[3]
+    imagery = res.match[3]
     res.http('http://ajax.googleapis.com/ajax/services/search/images')
       .query(v: "1.0", rsz: '8', q: query)
       .get() (err, res, body) ->
