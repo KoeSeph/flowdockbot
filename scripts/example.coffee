@@ -86,8 +86,8 @@ module.exports = (robot) ->
     res.http('http://ajax.googleapis.com/ajax/services/search/images')
       .query(v: "1.0", rsz: '8', q: query)
       .get() (err, res, body) ->
-      images = JSON.parse(body)
-      images = images.responseData.results
+       images = JSON.parse(body)
+       images = images.responseData.results
       res.send res.random images
 
   robot.respond /open the (.*) doors/i, (res) ->
@@ -165,6 +165,9 @@ module.exports = (robot) ->
     res.send 'OK'
 
   robot.error (err, res) ->
+    robot.logger.error(err)
+    robot.logger.error(res)
+
     robot.logger.error "DOES NOT COMPUTE"
 
     if res?
