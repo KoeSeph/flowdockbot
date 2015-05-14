@@ -88,7 +88,7 @@ module.exports = (robot) ->
       .query(v: "1.0", rsz: '8', q: imagery)
       .get() (err, res, body) ->
        images = JSON.parse(body)
-       robot.logger images
+       robot.logger.error(images)
        images = images.responseData.results
        robot.logger images
     res.send res.random images
