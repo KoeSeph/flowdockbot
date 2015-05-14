@@ -84,7 +84,7 @@ module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (res) ->
     imagery = res.match[3]
     res.http('http://ajax.googleapis.com/ajax/services/search/images')
-      .query(v: "1.0", rsz: '8', q: query)
+      .query(v: "1.0", rsz: '8', q: imagery)
       .get() (err, res, body) ->
        images = JSON.parse(body)
        images = images.responseData.results
