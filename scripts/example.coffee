@@ -85,7 +85,7 @@ module.exports = (robot) ->
     doEye = ['no', 'do you?', 'yes', 'pizza', 'potatoes', 'peanuts','maybe', '@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng@yeng']
     res.send res.random doEye
 
-  robot.respond /(image|img)( me)? (.*)/i, (res) ->
+  robot.respond /(image|img|show)( me)? (.*)/i, (res) ->
     imagery = res.match[3]
     images = []
     res.http('http://ajax.googleapis.com/ajax/services/search/images')
