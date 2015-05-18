@@ -7,10 +7,9 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-cleverbot = require('cleverbot-node')
+
 
 module.exports = (robot) ->
-  c = new cleverbot()
 
   robot.hear /!macromania/i, (res) ->
     res.send "working on it ;)"
@@ -192,17 +191,17 @@ module.exports = (robot) ->
 
   robot.respond /annoy me/, (res) ->
     if annoyIntervalId
-      res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH @yeng"
+      res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
       return
 
     res.send "Hey, want to hear the most annoying sound in the world?"
     annoyIntervalId = setInterval () ->
-      res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH @yeng"
+      res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
     , 1000
 
   robot.respond /unannoy me/, (res) ->
     if annoyIntervalId
-      res.send "GUYS, GUYS, GUYS!"
+      res.send "k."
       clearInterval(annoyIntervalId)
       annoyIntervalId = null
     else
